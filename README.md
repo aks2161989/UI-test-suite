@@ -133,7 +133,7 @@ Initial codegen recordings contained brittle patterns:
    ```
 3. **Tags (Scoped to Card)**:
    ```typescript
-   const tag = card.locator('span.rounded-full', { hasText: tagName });
+   const tag = card.getByText(tagName, { exact: true });
    ```
 
 This guarantees that:
