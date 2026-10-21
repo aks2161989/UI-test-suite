@@ -33,8 +33,7 @@ The test suite validates task cards, column positioning, and tags across project
 │   ├── BoardPage.ts               # POM for board interactions & assertions
 │   └── LoginPage.ts               # POM for login & authentication
 ├── tests/
-│   ├── board-data-driven.spec.ts  # Main data-driven test suite
-│   └── codegen-reference/         # Exploratory codegen recordings (preserved)
+│   └── board-data-driven.spec.ts  # Main data-driven test suite
 ├── types/
 │   └── index.ts                   # TypeScript interfaces for test data & auth
 ├── playwright.config.ts           # Playwright runner configuration
