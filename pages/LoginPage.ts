@@ -21,7 +21,7 @@ export class LoginPage {
   }
 
   /**
-   * Fills in login credentials and submits the form.
+   * Fills in login credentials, submits the form, and verifies successful navigation.
    */
   async login(username: string, password: string) {
     await expect(this.usernameInput).toBeVisible();
@@ -30,6 +30,11 @@ export class LoginPage {
     await this.passwordInput.fill(password);
     await expect(this.signInButton).toBeVisible();
     await this.signInButton.click();
-    await this.page.waitForLoadState('networkidle');
+
+    // Verify post-login landing state by asserting the "Projects" heading is visible
+    await expect(
+      this.page.getByRole('heading', { name: 'Projects' }),
+      'Expected "Projects" header to be visible upon successful login'
+    ).toBeVisible();
   }
 }
