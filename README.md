@@ -58,8 +58,8 @@ The test suite validates task cards, column positioning, and tags across project
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- npm (v9 or higher)
+- [Node.js](https://nodejs.org/) (v24 LTS recommended)
+- npm
 
 ### Installation
 
