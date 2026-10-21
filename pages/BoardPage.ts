@@ -17,7 +17,7 @@ export class BoardPage {
    */
   async navigateToProject(projectName: string) {
     const projectButton = this.navSidebar.getByRole('button', {
-      name: new RegExp(projectName, 'i'),
+      name: new RegExp(`^${projectName}\\b`, 'i'),
     });
     await expect(projectButton).toBeVisible();
     await projectButton.click();
