@@ -6,17 +6,15 @@ The test suite validates task cards, column positioning, and tags across project
 
 ---
 
-## Key Features & Architecture
+## Architecture & Design
 
-- **Data-Driven Architecture**: Adheres strictly to the evaluation requirement. All 6 test scenarios are defined as structured data in [`data/testCases.json`](data/testCases.json). Scenarios dynamically drive tests without code duplication.
+- **Data-Driven Testing**: All six test scenarios are defined in [`data/testCases.json`](data/testCases.json), dynamically generating independent Playwright tests from a single parameterized test loop to eliminate code duplication.
 - **Page Object Model (POM)**:
-  - [`LoginPage`](pages/LoginPage.ts): Encapsulates authentication interactions and verification.
-  - [`BoardPage`](pages/BoardPage.ts): Encapsulates navigation between projects, column discovery, and scoped card & tag validations.
-- **Resilient Hierarchical Locators**:
-  - Replaces brittle codegen selectors (such as `.first()`, `.nth()`, and text-concatenated counts like `'To Do (2)'`).
-  - Scopes assertions hierarchically: `Column (by heading) -> Task Card (by title) -> Tag Badges (by text)`.
-- **Cross-Browser Verification**: Fully verified across **Chromium**, **Firefox**, and **WebKit** (Safari).
-- **CI/CD Integration**: Pre-configured GitHub Actions workflow (`.github/workflows/playwright.yml`).
+  - [`LoginPage`](pages/LoginPage.ts): Manages authentication interactions and verifies landing state using web-first assertions.
+  - [`BoardPage`](pages/BoardPage.ts): Handles sidebar project navigation, column discovery, and scoped card/tag validations.
+- **Scoped Locator Strategy**: Locators and assertions are scoped hierarchically (`Column -> Task Card -> Tags`) to ensure tags and cards are validated strictly within their intended column context rather than globally on the page.
+- **Cross-Browser Coverage**: Configured and verified across Chromium, Firefox, and WebKit.
+- **CI/CD Integration**: Includes a GitHub Actions workflow (`.github/workflows/playwright.yml`) to run the test suite on pushes and pull requests.
 
 ---
 
