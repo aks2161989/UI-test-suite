@@ -1,6 +1,6 @@
 # Playwright Data-Driven UI Test Suite
 
-Automated UI test suite built with [Playwright](https://playwright.dev/) and TypeScript for the **Loop Technical Evaluation - 2025**.
+Automated UI test suite built with Playwright and TypeScript for the **Loop Technical Evaluation**.
 
 The test suite validates task cards, column positioning, and tags across projects on the Asana-like demo web application (`https://create-asana-like-pr-39y5.bolt.host/`).
 
@@ -36,7 +36,7 @@ The test suite validates task cards, column positioning, and tags across project
 │   └── index.ts                   # TypeScript interfaces for test data & auth
 ├── playwright.config.ts           # Playwright runner configuration
 ├── package.json                   # Dependencies & npm run scripts
-└── README.md                      # Project documentation & walkthrough guide
+└── README.md                      # Project documentation 
 ```
 
 ---
@@ -58,7 +58,7 @@ The test suite validates task cards, column positioning, and tags across project
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v24 LTS recommended)
+- Node.js v24 LTS 
 - npm
 
 ### Installation
@@ -107,7 +107,7 @@ The test suite validates task cards, column positioning, and tags across project
 
 ## Locator Strategy Explanation
 
-Initial codegen recordings contained brittle patterns:
+During initial exploration, Playwright Codegen produced selectors with brittle patterns such as:
 - Coupling to mutable badge counts (e.g. `'To Do (2)'`)
 - Using global positional indexers like `.first()` and `.nth(1)` across the whole page
 - Missing DOM hierarchy verification
@@ -133,6 +133,6 @@ Initial codegen recordings contained brittle patterns:
    const tag = card.getByText(tagName, { exact: true });
    ```
 
-This guarantees that:
+This approach ensures that:
 - Adding, removing, or reordering task cards does not affect the selectors as long as the semantic heading structure remains consistent.
 - Verifying a tag strictly asserts it belongs to that specific task card inside that specific column.
