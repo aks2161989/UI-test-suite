@@ -8,7 +8,7 @@ The test suite validates task cards, column positioning, and tags across project
 
 ## Architecture & Design
 
-- **Data-Driven Testing**: All six test scenarios are defined in [`data/testCases.json`](data/testCases.json), dynamically generating independent Playwright tests from a single parameterized test loop to eliminate code duplication.
+- **Data-Driven Testing**: Test scenarios are structured in [`data/testCases.json`](data/testCases.json). Each JSON object dynamically generates an independent Playwright test from a shared implementation, so adding new test cases requires only new data without duplicating automation code.
 - **Page Object Model (POM)**:
   - [`LoginPage`](pages/LoginPage.ts): Manages authentication interactions and verifies landing state using web-first assertions.
   - [`BoardPage`](pages/BoardPage.ts): Handles sidebar project navigation, column discovery, and scoped card/tag validations.
