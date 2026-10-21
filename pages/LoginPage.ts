@@ -33,7 +33,7 @@ export class LoginPage {
 
     // Verify post-login landing state by asserting the "Projects" heading is visible
     await expect(
-      this.page.getByRole('heading', { name: 'Projects' }),
+      this.page.getByRole('heading', { name: 'Projects', exact: true }),
       'Expected "Projects" header to be visible upon successful login'
     ).toBeVisible();
   }
