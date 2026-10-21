@@ -9,3 +9,7 @@ node_modules/
 # Codegen reference
 codegen-reference/
 tests/codegen-reference/
+
+# Video walkthrough notes (local only)
+video_walkthrough_guide.md
+*walkthrough*
