@@ -137,7 +137,7 @@ Initial codegen recordings contained brittle patterns:
    ```
 
 This guarantees that:
-- Adding/removing tasks in a column never breaks selectors.
+- Adding, removing, or reordering task cards does not affect the selectors as long as the semantic heading structure remains consistent.
 - Verifying a tag strictly asserts it belongs to that specific task card inside that specific column.
 
 ---
