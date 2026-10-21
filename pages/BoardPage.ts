@@ -55,15 +55,6 @@ export class BoardPage {
   }
 
   /**
-   * Returns all tag badge texts found on a specific card in a column.
-   */
-  async getCardTags(columnName: string, taskTitle: string): Promise<string[]> {
-    const card = this.getCardInColumn(columnName, taskTitle);
-    await expect(card).toBeVisible();
-    return await card.locator('span.rounded-full').allInnerTexts();
-  }
-
-  /**
    * Verifies that a task card is visible within the specified column.
    */
   async verifyCardInColumn(columnName: string, taskTitle: string) {
