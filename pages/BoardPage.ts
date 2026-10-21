@@ -24,7 +24,7 @@ export class BoardPage {
 
     // Verify header updates to the selected project
     const projectHeader = this.page
-      .locator('header, div.px-6')
+      .getByRole('banner')
       .getByRole('heading', { level: 1, name: projectName });
     await expect(projectHeader).toBeVisible();
   }
@@ -88,7 +88,7 @@ export class BoardPage {
     await expect(card).toBeVisible();
 
     for (const tag of expectedTags) {
-      const tagBadge = card.locator('span.rounded-full', { hasText: tag });
+      const tagBadge = card.getByText(tag, { exact: true });
       await expect(
         tagBadge,
         `Expected tag "${tag}" to be visible on card "${taskTitle}" in column "${columnName}"`
