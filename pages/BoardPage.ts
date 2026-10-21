@@ -25,7 +25,7 @@ export class BoardPage {
     // Verify header updates to the selected project
     const projectHeader = this.page
       .getByRole('banner')
-      .getByRole('heading', { level: 1, name: projectName });
+      .getByRole('heading', { level: 1, name: projectName, exact: true });
     await expect(projectHeader).toBeVisible();
   }
 
