@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Test Case 1",
+    "description": "Verify 'Implement user authentication' is in 'To Do' column with 'Feature' and 'High Priority' tags",
+    "project": "Web Application",
+    "column": "To Do",
+    "taskTitle": "Implement user authentication",
+    "tags": ["Feature", "High Priority"]
+  },
+  {
+    "id": 2,
+    "name": "Test Case 2",
+    "description": "Verify 'Fix navigation bug' is in 'To Do' column with 'Bug' tag",
+    "project": "Web Application",
+    "column": "To Do",
+    "taskTitle": "Fix navigation bug",
+    "tags": ["Bug"]
+  },
+  {
+    "id": 3,
+    "name": "Test Case 3",
+    "description": "Verify 'Design system updates' is in 'In Progress' column with 'Design' tag",
+    "project": "Web Application",
+    "column": "In Progress",
+    "taskTitle": "Design system updates",
+    "tags": ["Design"]
+  },
+  {
+    "id": 4,
+    "name": "Test Case 4",
+    "description": "Verify 'Push notification system' is in 'To Do' column with 'Feature' tag",
+    "project": "Mobile Application",
+    "column": "To Do",
+    "taskTitle": "Push notification system",
+    "tags": ["Feature"]
+  },
+  {
+    "id": 5,
+    "name": "Test Case 5",
+    "description": "Verify 'Offline mode' is in 'In Progress' column with 'Feature' and 'High Priority' tags",
+    "project": "Mobile Application",
+    "column": "In Progress",
+    "taskTitle": "Offline mode",
+    "tags": ["Feature", "High Priority"]
+  },
+  {
+    "id": 6,
+    "name": "Test Case 6",
+    "description": "Verify 'App icon design' is in 'Done' column with 'Design' tag",
+    "project": "Mobile Application",
+    "column": "Done",
+    "taskTitle": "App icon design",
+    "tags": ["Design"]
+  }
+]
